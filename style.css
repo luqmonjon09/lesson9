@@ -1,0 +1,126 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root{
+    --pubg: #cc0cf3;
+    --bg-py: dodgerblue;
+    --size: 28px;
+    --border: 3px solid red
+}
+.title{
+    text-align: center;
+    color: var(--pubg);
+    background: var(--bg-py);
+    font-size: var(--size);
+    border: var(--border);
+}
+.btn{
+    padding: 8px 30px;
+    background: var(--pubg);
+    color: var(--bg-py);
+    font-size: var(--size);
+    border: var(--border);
+}
+.box{
+    width: 300px;
+    height: 200px;
+    background: var(--bg-py);
+    margin: var(--size) auto;
+    position: relative;
+}
+.box::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100px;
+    height: 50px;
+    background: red;
+}
+.box::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 50px;
+    height: 80px;
+    background: PINK;
+}
+.photo{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+.photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.photo:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+
+    width: 50%;
+    height: 100%;
+    background: #00f6;
+    transition: 0.5s;
+}
+.photo:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -50%;
+
+    width: 50%;
+    height: 100%;
+    background: #00f6;
+    transition: 0.5s;
+}
+.photo:hover::before{
+    left: 0;
+}
+.photo:hover::after{
+    right: 0;
+}
+nav{
+    width: 100%;
+    height: 70px;
+    background: violet;
+    padding: 0 10%;
+}
+.collection{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.item{
+    list-style: none;
+    margin-right: 50px;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+.item::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background: red;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: 0.3s;
+}
+.item:hover::before{
+    transform: scaleX(1);
+}
